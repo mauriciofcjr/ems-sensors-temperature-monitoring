@@ -3,10 +3,7 @@ package com.mchaves.sensors.temperature.monitoring.domain.model;
 
 import io.hypersistence.tsid.TSID;
 import jakarta.persistence.Embeddable;
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -15,6 +12,7 @@ import java.util.Objects;
 @Embeddable
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EqualsAndHashCode
+@ToString(of = "id")
 public class SensorId implements Serializable {
 
     private TSID value;
@@ -32,10 +30,5 @@ public class SensorId implements Serializable {
     public SensorId(String value){
         Objects.requireNonNull(value);
         this.value = TSID.from(value);
-    }
-
-    @Override
-    public String toString(){
-        return value.toString();
     }
 }
