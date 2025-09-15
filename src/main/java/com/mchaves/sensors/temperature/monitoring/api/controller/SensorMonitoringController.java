@@ -1,12 +1,9 @@
 package com.mchaves.sensors.temperature.monitoring.api.controller;
 
 import com.mchaves.sensors.temperature.monitoring.api.model.SensorMonitoringOutput;
-
-
 import com.mchaves.sensors.temperature.monitoring.domain.model.SensorId;
 import com.mchaves.sensors.temperature.monitoring.domain.model.SensorMonitoring;
 import com.mchaves.sensors.temperature.monitoring.domain.repository.SensorMonitoringRepository;
-
 import io.hypersistence.tsid.TSID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,7 +17,7 @@ public class SensorMonitoringController {
     private final SensorMonitoringRepository sensorMonitoringRepository;
 
     @GetMapping
-    public SensorMonitoringOutput getDetail(@PathVariable TSID sensorId){
+    public SensorMonitoringOutput getDetail(@PathVariable TSID sensorId) {
         SensorMonitoring sensorMonitoring = findByIdOrDefault(sensorId);
 
         return SensorMonitoringOutput.builder()
