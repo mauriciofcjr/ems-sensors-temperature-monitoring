@@ -2,7 +2,6 @@ package com.mchaves.sensors.temperature.monitoring.api.config.jackson;
 
 import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.mchaves.sensors.device.management.api.config.jackson.TSIDToStringSerializer;
 import io.hypersistence.tsid.TSID;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
