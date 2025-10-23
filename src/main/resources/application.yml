@@ -1,3 +1,6 @@
+server:
+  port: '8082'
+
 spring:
   application.name: temperature-monitoring
   datasource:
@@ -19,6 +22,3 @@ spring:
     port: 5672
     username: rabbitmq
     password: rabbitmq
-
-server:
-  port: 8082
