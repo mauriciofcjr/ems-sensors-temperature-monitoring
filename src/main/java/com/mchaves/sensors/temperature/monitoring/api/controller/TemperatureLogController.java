@@ -1,6 +1,6 @@
 package com.mchaves.sensors.temperature.monitoring.api.controller;
 
-import com.mchaves.sensors.temperature.monitoring.api.model.TemperatureLogOutput;
+import com.mchaves.sensors.temperature.monitoring.api.model.TemperatureLogData;
 import com.mchaves.sensors.temperature.monitoring.domain.model.SensorId;
 import com.mchaves.sensors.temperature.monitoring.domain.model.TemperatureLog;
 import com.mchaves.sensors.temperature.monitoring.domain.repository.TemperatureLogRepository;
@@ -22,12 +22,12 @@ public class TemperatureLogController {
     private final TemperatureLogRepository temperatureLogRepository;
 
     @GetMapping
-    public Page<TemperatureLogOutput> search(@PathVariable TSID sensorId, @PageableDefault Pageable pageable){
+    public Page<TemperatureLogData> search(@PathVariable TSID sensorId, @PageableDefault Pageable pageable){
 
         Page<TemperatureLog> temperatureLogs = temperatureLogRepository.findAllBySensorId(
                 new SensorId(sensorId), pageable);
 
-        return temperatureLogs.map(temperatureLog -> TemperatureLogOutput.builder()
+        return temperatureLogs.map(temperatureLog -> TemperatureLogData.builder()
                 .id(temperatureLog.getId().getValue())
                 .value(temperatureLog.getValue())
                 .registeredAt(temperatureLog.getRegisteredAt())
