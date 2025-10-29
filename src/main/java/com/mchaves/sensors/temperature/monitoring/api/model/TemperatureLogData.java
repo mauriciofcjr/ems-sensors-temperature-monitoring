@@ -1,13 +1,19 @@
 package com.mchaves.sensors.temperature.monitoring.api.model;
 
-import io.hypersistence.tsid.TSID;
-import lombok.Builder;
-import lombok.Data;
-
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-@Data
+import io.hypersistence.tsid.TSID;
+import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class TemperatureLogData {
     private UUID id;
