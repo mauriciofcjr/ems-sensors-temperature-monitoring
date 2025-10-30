@@ -26,4 +26,8 @@ public class SensorMonitoring {
     private OffsetDateTime updatedAt;
     private Boolean enable;
 
+    public boolean isEnable() {
+        return Boolean.TRUE.equals(enable);
+    }
+
 }
